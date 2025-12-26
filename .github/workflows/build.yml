@@ -20,7 +20,8 @@ jobs:
           make clean
           make
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: SchoolBook3DS
           path: SchoolBook3DS.3dsx
+
