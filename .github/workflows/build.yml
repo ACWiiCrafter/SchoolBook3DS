@@ -1,0 +1,26 @@
+name: Build 3DS Homebrew
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install devkitPro
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y devkitarm devkitpro-pacman
+      - name: Build SchoolBook3DS
+        run: |
+          make clean
+          make
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: SchoolBook3DS
+          path: SchoolBook3DS.3dsx

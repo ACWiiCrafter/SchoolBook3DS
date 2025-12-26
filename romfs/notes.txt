@@ -1,0 +1,5 @@
+Maths:15,12,18
+Francais:14,13
+Anglais:16,17,15
+Histoire:16,15
+Physique:13,14,12
